@@ -18,3 +18,10 @@ my_atlas_billing.py interfaces with the Invoices API as documented
 in the [MongoDB Atlas Invoices API](https://docs.atlas.mongodb.com/reference/api/invoices/)
 documentation.
 
+## Backups API
+This specifically is requesting a restore job based on a specific snapshot.  This downloads
+it to a local directory.
+my_atlas_backups.py interfaces with the Continuous Backup API as documented
+in the [MongoDB Atlas Backups API](https://docs.atlas.mongodb.com/reference/api/cloud-provider-snapshot-restore-jobs-get-one/)
+documentation.
+

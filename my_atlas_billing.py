@@ -6,6 +6,7 @@ import time
 from timeit import default_timer as timer
 import sys
 from requests.auth import HTTPDigestAuth
+from decimal import Decimal
 
 ####
 # Start script
@@ -24,7 +25,7 @@ def main():
 
     # Get a response from the MongoDB Atlas API
     # This example is interacting with the MongoDB Atlas Billing API
-    response = requests.request("GET", API_URL, auth=HTTPDigestAuth(PUBLIC_API_KEY, PRIVATE_API_KEY))
+    response = requests.request("GET", INVOICES_API_URL, auth=HTTPDigestAuth(PUBLIC_API_KEY, PRIVATE_API_KEY))
 
     if response.ok:
         json_response = response.json()
@@ -32,7 +33,7 @@ def main():
         process_response(json_response)
 
     else:
-        print('Invalid response! ' + response.content)
+        print('Invalid response! ' + str(response.content))
         sys.exit('Exiting!')
 
 
@@ -76,7 +77,7 @@ def process_response(json_response):
 ####
 # Constants loaded from .env file
 ####
-API_URL = settings.API_URL
+INVOICES_API_URL = settings.INVOICES_API_URL
 PUBLIC_API_KEY = settings.PUBLIC_API_KEY
 PRIVATE_API_KEY = settings.PRIVATE_API_KEY
 PROJECT_ID = settings.PROJECT_ID

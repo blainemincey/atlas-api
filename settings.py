@@ -7,6 +7,7 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 # Accessing variables.
+CLUSTERS_API_URL = os.getenv('CLUSTERS_API_URL')
 INVOICES_API_URL = os.getenv('INVOICES_API_URL')
 BACKUPS_API_URL = os.getenv('BACKUPS_API_URL')
 PUBLIC_API_KEY = os.getenv('PUBLIC_API_KEY')
